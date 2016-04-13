@@ -1,3 +1,5 @@
+#!/usr/local/bin/python2.7
+# -*- coding: utf-8 -*-
 import pika
 import json
 for i in range(1000):
@@ -12,7 +14,7 @@ for i in range(1000):
         "FetchDate": 't',
         "clientURL": 'http://127.0.0.1/time_delay.php',
         "user_id": 1,
-        "text": "Hello world"
+        "text": "آموزش "
     }
     j_data = json.dumps(data)
     channel.basic_publish(exchange='',
