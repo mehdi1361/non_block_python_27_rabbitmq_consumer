@@ -52,7 +52,6 @@ def read(queue_object):
 	if body:
 		data = json.loads(body)
 		urls = [data['clientURL']]
-		# print data
 		text = data['text']
 		pool = eventlet.GreenPool()
 		db = MySQLdb.connect("127.0.0.1", "root", "13610522", "mmp_hamrah")
