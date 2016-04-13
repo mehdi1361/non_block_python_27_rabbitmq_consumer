@@ -10,7 +10,7 @@ from pika.adapters import twisted_connection
 from twisted.internet import defer, reactor, protocol, task
 from eventlet.green import urllib2
 from eventlet.timeout import Timeout
-import urllib2
+
 
 def fetch(url):
 	response = bytearray()
@@ -70,7 +70,7 @@ def read(queue_object):
 			if not length:
 				print "%s: timeout! FetchDate: %s" % (url, datetime.datetime.now())
 			else:
-				print "%s time : " % (url, datetime.datetime.now())
+				print "fetch_date : %s, date_response: %s,url: %s " % (data['FetchDate'],datetime.datetime.now(),url)
 	yield ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
